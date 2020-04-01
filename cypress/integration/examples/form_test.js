@@ -22,7 +22,17 @@ describe("Test our inputs and submit our form", function()
         .should("have.value", "Isaias here 😎");
       cy.get("input[name='email']") 
         .type('email@gmail.com')
-        .should("have.value", "email@gmail.com"); 
-
+        .should("have.value", "email@gmail.com");
+         //1.5: We went to our FORM.JS and added a "data-cy" input with a value of "text-area" on line 124
+      cy.get("textarea")
+        .type("I want to help people") 
+        .should("have.have", "I want to help people");
+      cy.get("#positions")
+        .select("Yard Work")
+        .should("have.value", "Yard Work");
+      cy.get('[type="checkbox')
+      .check()
+      .should('be.checked');
+      cy.get('button').click();
     });
 });
